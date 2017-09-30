@@ -1,6 +1,6 @@
 {
     "name": "@atlauncher/discord-bot",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "This is the code for our Discord bot which runs on our official Discord server at https://atl.pw/discord",
     "main": "dist",
     "scripts": {
@@ -8,13 +8,12 @@
         "build:watch": "npm run build -- -w",
         "clean": "atlauncher-scripts clean",
         "config:base64": "atlauncher-scripts babel-run utils/base64Config.js",
-        "dev": "cross-env NODE_ENV=development nodemon -w src -e js,json --exec \"atlauncher-scripts babel-run src\"",
+        "dev": "cross-env NODE_ENV=development nodemon -w src -e ts --exec \"npm run build && npm run start\"",
         "lint": "tslint -c tslint.json -p tsconfig.json",
         "lint:watch": "npm run lint -- --watch",
         "oauth:url": "atlauncher-scripts babel-run utils/getOAuthUrl.js",
-        "prepush": "npm run lint && npm run test",
-        "start": "node dist/app.js",
-        "test": ""
+        "prepush": "npm run lint",
+        "start": "node dist/app.js"
     },
     "repository": {
         "type": "git",
@@ -25,26 +24,27 @@
         "atlauncher",
         "bot"
     ],
-    "author": "Ryan Dowling <ryan.dowling@atlauncher.com>",
+    "author": "Ryan Dowling <ryan@ryandowling.me>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/ATLauncher/Discord-Bot/issues"
     },
     "homepage": "https://github.com/ATLauncher/Discord-Bot#readme",
     "dependencies": {
-        "@atlauncher/atlauncher-scripts": "0.1.0-14",
-        "sequelize": "~4.11.5",
-        "sqlite3": "~3.1.13",
-        "yamdbf": "~3.0.1"
+        "@atlauncher/atlauncher-scripts": "0.1.0-15",
+        "sequelize": "^4.11.5",
+        "sqlite3": "^3.1.13",
+        "yamdbf": "^3.0.1"
     },
     "devDependencies": {
-        "@types/node": "~8.0.31",
-        "@types/sequelize": "~4.0.75",
-        "@types/sqlite3": "~3.1.1",
+        "@types/node": "^8.0.31",
+        "@types/sequelize": "^4.0.75",
+        "@types/sqlite3": "^3.1.1",
         "cross-env": "^5.0.5",
         "husky": "^0.14.3",
         "nodemon": "^1.12.1",
-        "rimraf": "^2.6.2"
+        "tslint": "~5.7.0",
+        "typescript": "~2.5.3"
     },
     "engineStrict": true,
     "engines": {
