@@ -1,3 +1,3 @@
-import config from '../config/config.json';
+const config = require('../config/config.json');
 
 console.log(Buffer.from(JSON.stringify(config)).toString('base64'));

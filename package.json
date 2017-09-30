@@ -7,11 +7,11 @@
         "build": "tsc",
         "build:watch": "npm run build -- -w",
         "clean": "atlauncher-scripts clean",
-        "config:base64": "atlauncher-scripts babel-run utils/base64Config.js",
+        "config:base64": "ts-node utils/base64Config.ts",
         "dev": "cross-env NODE_ENV=development nodemon -w src -e ts --exec \"npm run build && npm run start\"",
         "lint": "tslint -c tslint.json -p tsconfig.json",
         "lint:watch": "npm run lint -- --watch",
-        "oauth:url": "atlauncher-scripts babel-run utils/getOAuthUrl.js",
+        "oauth:url": "ts-node utils/getOAuthUrl.ts",
         "prepush": "npm run lint",
         "start": "node dist/app.js"
     },
@@ -43,6 +43,7 @@
         "cross-env": "^5.0.5",
         "husky": "^0.14.3",
         "nodemon": "^1.12.1",
+        "ts-node": "~3.3.0",
         "tslint": "~5.7.0",
         "typescript": "~2.5.3"
     },
