@@ -1,4 +1,5 @@
 {
+    "command_prefix": "!",
     "moderator_channel": "moderation-logs",
     "support_channel": "support",
     "rules_channel": "rules",
@@ -8,6 +9,9 @@
     "bad_words": [
         "bum",
         "hole"
+    ],
+    "owners": [
+        'Your Discord ID here'
     ],
     "appeal_url": "https://www.google.com",
     "client_id": "",
